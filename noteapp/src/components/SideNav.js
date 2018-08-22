@@ -9,7 +9,7 @@ class SideNav extends Component {
       <div className="sidebar">
         <h2>Lambda Notes</h2>
         <div className="home-buttons">
-          <Link to="/">
+          <Link to="/notes">
             <button className="nav-button">View Notes</button>
           </Link>
           <Link to="/NoteForm">

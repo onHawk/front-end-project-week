@@ -2,23 +2,24 @@ import React, { Component } from 'react';
 import notestyles from './notestyles.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'reactstrap';
-import Note from './Note';
 
-import loadNotes from '../actions/GetActions';
+import { allNotes } from '../actions/NoteActions';
+
+import Note from './Note';
+import SideNav from './SideNav';
 
 class NotesPage extends Component {
+  componentDidMount() {
+    this.props.allNotes();
+  }
   render() {
     console.log(this.props.notes);
     return (
       <div className="notepage">
+        <SideNav />
         <h3>Your Notes:</h3>
         {this.props.notes.map((note, i) => {
-          <Note
-            title={this.props.title}
-            content={this.props.content}
-            key={i}
-          />;
+          return <Note title={note.title} content={note.content} key={i} />;
         })}
       </div>
     );
@@ -27,10 +28,13 @@ class NotesPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    notes: state.notes
+    notes: state.note.notes,
   };
 };
 
 // export default NotesPage;
 
-export default connect(mapStateToProps, loadNotes)(NotesPage);
+export default connect(
+  mapStateToProps,
+  { allNotes }
+)(NotesPage);
