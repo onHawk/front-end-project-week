@@ -59,16 +59,9 @@ class AddNote extends Component {
               onChange={e => this.handleChange({ content: e.target.value })}
             />
 
-            {/* <Link to="/notes"> */}
-            <button
-              type="submit"
-              // onClick={() => {
-              //   this.props.addNote(this.state, this.props.history);
-              // }}
-            >
-              Save
-            </button>
-            {/* </Link> */}
+            <Link to="/notes">
+              <button type="submit">Save</button>
+            </Link>
           </form>
         </div>
       </div>
