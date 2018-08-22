@@ -32,7 +32,7 @@ class Signin extends Component {
 
 const mapStateToProps = state => {
   return {
-    success: state.success,
+    error: state.auth.message,
   };
 };
 

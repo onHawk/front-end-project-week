@@ -5,6 +5,7 @@ export const USER_AUTHENTICATED = 'USER_AUTHENTICATED';
 export const USER_UNAUTHENTICATED = 'USER_UNAUTHENTICATED';
 export const AUTHENTICATION_ERROR = 'AUTHENTICATION_ERROR';
 export const SUCCESS = 'SUCCESS';
+export const DE_AUTH = 'DE_AUTH';
 
 export const USER_NOTES = 'USER_NOTES';
 
@@ -30,7 +31,7 @@ export const register = (credentials, history) => {
       })
       .then(res => {
         localStorage.setItem('id', res.data.token);
-        history.push('/notes');
+        history.push('/signin');
       })
       .catch(err => {
         console.log(err);
@@ -60,5 +61,14 @@ export function login(credentials, history) {
           dispatch(authError('Username/Password invalid.'));
         }
       });
+  };
+}
+
+export function logout(history) {
+  return dispatch => {
+    dispatch({ type: 'DE_AUTH', payload: 'Logged out' });
+    localStorage.removeItem('id');
+    console.log('logged out');
+    // history.push('/signin');
   };
 }

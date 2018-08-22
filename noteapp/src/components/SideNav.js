@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import { Nav, NavItem, NavLink } from 'reactstrap';
-import notestyles from './notestyles.css';
+import { connect } from 'react-redux';
+
+import { logout } from '../actions/AuthActions';
 
 class SideNav extends Component {
+  logoutUser = () => {
+    this.props.logout(this.props.history);
+  };
   render() {
     return (
       <div className="sidebar">
@@ -12,13 +16,27 @@ class SideNav extends Component {
           <Link to="/notes">
             <button className="nav-button">View Notes</button>
           </Link>
-          <Link to="/NoteForm">
+          <Link to="/AddNote">
             <button className="nav-button">+ Create New Note</button>
           </Link>
+        </div>
+        <div>
+          <p onClick={() => this.logoutUser()}>
+            <Link to="/signin">Log out</Link>
+          </p>
         </div>
       </div>
     );
   }
 }
 
-export default SideNav;
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user,
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { logout }
+)(SideNav);
