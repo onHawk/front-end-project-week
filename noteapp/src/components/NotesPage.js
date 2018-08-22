@@ -14,11 +14,15 @@ class NotesPage extends Component {
   }
   render() {
     console.log(this.props.notes);
+    // userNotes = this.props.notes.filter(note => {
+    //   return
+    // })
+    const { notes } = this.props;
     return (
       <div className="notepage">
         <SideNav />
         <h3>Your Notes:</h3>
-        {this.props.notes.map((note, i) => {
+        {notes.map((note, i) => {
           return <Note title={note.title} content={note.content} key={i} />;
         })}
       </div>

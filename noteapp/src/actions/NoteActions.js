@@ -16,28 +16,36 @@ export const allNotes = () => {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
+        console.log(res.data);
         dispatch({ type: ALL_NOTES, payload: res.data });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 };
 
-export const addNote = (one, history) => {
+export const addNote = (note, history) => {
   return dispatch => {
     axios
-      .post(`${ROOT}/api/newnote`, one, {
+      .post(`${ROOT}/api/newnote`, note, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
+        console.log(res.data, 'add action');
         history.push('/notes');
-        dispatch({ type: ADD_NOTE, payload: res.data });
+        dispatch({ type: ADD_NOTE, payload: 'Added' });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 };
 
-export const updateNote = (one, history) => {
+export const updateNote = (content, history) => {
   return dispatch => {
     axios
-      .put(`${ROOT}/api/updatenote/${one.id}`, one, {
+      .put(`${ROOT}/api/updatenote/${content.id}`, content, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {

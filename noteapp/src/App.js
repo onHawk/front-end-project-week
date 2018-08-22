@@ -5,6 +5,7 @@ import Landing from './components/Landing';
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import NotesPage from './components/NotesPage';
+import AddNote from './components/AddNote';
 
 import './App.css';
 
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
           <Route path="/notes" component={NotesPage} />
+          <Route path="/addnote" component={AddNote} />
         </div>
       </Router>
     );
