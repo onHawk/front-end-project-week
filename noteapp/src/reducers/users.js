@@ -8,7 +8,7 @@ const initialState = {
   user: [],
 };
 
-export default function(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case AUTHENTICATION_ERROR:
       return { ...state, message: action.payload };
@@ -17,4 +17,4 @@ export default function(state = initialState, action) {
     default:
       return state;
   }
-}
+};
