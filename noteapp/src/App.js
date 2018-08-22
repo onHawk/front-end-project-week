@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import Landing from './components/Landing';
+import Signup from './components/Signup';
+import Signin from './components/Signin';
 import NotesPage from './components/NotesPage';
-import SideNav from './components/SideNav';
 
 import './App.css';
 
@@ -10,8 +13,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <SideNav />
-          <Route exact path="/" component={NotesPage} />
+          <Route exact path="/" component={Landing} />
+          <Route path="/signup" component={Signup} />
+          <Route path="/signin" component={Signin} />
+          <Route path="/notes" component={NotesPage} />
         </div>
       </Router>
     );
