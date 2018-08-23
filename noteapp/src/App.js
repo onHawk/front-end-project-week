@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-import Landing from './components/Landing';
-import Signup from './components/Signup';
-import Signin from './components/Signin';
-import NotesPage from './components/NotesPage';
-import AddNote from './components/AddNote';
+import Landing from './components/home/Landing';
+import Signup from './components/home/Signup';
+import Signin from './components/home/Signin';
+import NotesPage from './components/notes/NotesPage';
+import AddNote from './components/notes/AddNote';
 
 import './App.css';
 

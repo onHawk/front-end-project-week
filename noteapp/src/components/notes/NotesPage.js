@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import notestyles from './notestyles.css';
+import notestyles from '../notestyles.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { allNotes } from '../actions/NoteActions';
+import { allNotes } from '../../actions/NoteActions';
 
 import Note from './Note';
-import SideNav from './SideNav';
+import SideNav from '../SideNav';
 
 class NotesPage extends Component {
   componentDidMount() {

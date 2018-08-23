@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
-import { login } from '../actions/AuthActions';
+import { login } from '../../actions/AuthActions';
 
 class Signin extends Component {
   handleFormSubmit = credentials => {

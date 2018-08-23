@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
-import SideNav from './SideNav';
+import SideNav from '../SideNav';
 
-import { addNote } from '../actions/NoteActions';
+import { addNote } from '../../actions/NoteActions';
 
 class AddNote extends Component {
   state = {
