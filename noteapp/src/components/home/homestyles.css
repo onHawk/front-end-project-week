@@ -40,6 +40,8 @@ h1 {
 .link {
   height: 25%;
   align-self: center;
+  color: black;
+  text-decoration: none;
 }
 .signer {
   width: 6rem;
@@ -53,4 +55,25 @@ h1 {
 .signer:hover {
   cursor: pointer;
   background-color: #fdd497;
+}
+
+.form-container {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.form {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.fieldset {
+  width: 80%;
+  margin: 2rem auto;
+  border: none;
+  display: flex;
 }
