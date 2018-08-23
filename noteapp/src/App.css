@@ -3,10 +3,11 @@
   height: 58rem;
 }
 
-.page {
-  max-width: 80%;
+.page-landing {
+  width: 80%;
   height: 100%;
   display: flex;
   margin: 0 auto;
   border: 1px solid black;
+  background-image: url('./components/home/Typewriter.jpg');
 }

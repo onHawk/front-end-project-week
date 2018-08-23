@@ -9,8 +9,12 @@ import homestyles from './homestyles.css';
 class Landing extends Component {
   render() {
     return (
-      <div className="page">
+      <div className="page-landing">
         <div className="landing">
+          <div>
+            <img src={require('./lambda.png')} />
+          </div>
+          <br />
           <div className="intro">
             <div className="titulo">
               <h1>Lambda Notes</h1>

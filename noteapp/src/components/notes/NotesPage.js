@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import notestyles from '../notestyles.css';
+import notestyles from './notestyles.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
