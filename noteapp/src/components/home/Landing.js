@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import appstyles from '../../App.css';
+import homestyles from './homestyles.css';
 
 class Landing extends Component {
   render() {
