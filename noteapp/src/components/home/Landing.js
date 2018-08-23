@@ -3,17 +3,26 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+import appstyles from '../../App.css';
+
 class Landing extends Component {
   render() {
     return (
-      <div>
-        <div>
-          <Link to="/signup">
-            <button>Sign up</button>
-          </Link>
-          <Link to="/signin">
-            <button>Sign in</button>
-          </Link>
+      <div className="page">
+        <div className="landing">
+          <div className="intro">
+            <div className="titulo">
+              <h1>Lambda Notes</h1>
+            </div>
+            <div className="auths">
+              <Link to="/signup" className="link">
+                <button className="signer">Register</button>
+              </Link>
+              <Link to="/signin" className="link">
+                <button className="signer">Sign in</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     );
