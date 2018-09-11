@@ -1,5 +1,5 @@
 .landing {
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   flex-flow: column;
@@ -13,16 +13,19 @@
 .intro {
   display: flex;
   flex-flow: column;
-  width: 22rem;
+  width: 100%;
   height: 60%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: #a52a2a;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
+  /* border: #a52a2a 1px solid; */
   border-radius: 5px;
 }
 .titulo {
   /* background-color: #8d2424; */
   width: 100%;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  color: white;
+  display: flex;
+  justify-content: center;
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
 }
 h1 {
   padding: 1rem;
@@ -33,28 +36,33 @@ h1 {
   margin: 0 auto;
   display: flex;
   flex-flow: wrap;
-  justify-content: space-around;
-
+  justify-content: center;
   border-radius: 5px;
 }
 .link {
+  width: 50%;
   height: 25%;
-  align-self: center;
-  color: black;
+  /* align-self: center; */
   text-decoration: none;
 }
 .signer {
-  width: 6rem;
-  /* margin: 1rem; */
-  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 16px;
+  color: white;
+  width: 60%;
+  height: 80%;
   border: none;
   border-radius: 20px;
-  background-color: #ffdead;
+  border: 2px solid #ffdead;
+  background-color: #eeeeee00;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 .signer:hover {
+  color: black;
   cursor: pointer;
-  background-color: #fdd497;
+  background-color: #ffdead;
 }
 
 .form-container {
