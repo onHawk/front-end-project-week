@@ -16,29 +16,49 @@ class Signup extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
-      <div className="page">
+      <div className="page-landing">
         <div className="intro">
-          <Link className="link" to="/signin">
-            <div className="signer">Sign in</div>
-          </Link>
-          <form
-            className="form-container"
-            onSubmit={handleSubmit(this.handleForm)}
-          >
-            <div className="form">
-              <fieldset className="fieldset">
-                <label>Username:</label>
-                <Field name="username" component="input" type="text" />
-              </fieldset>
-              <fieldset className="fieldset">
-                <label>Password:</label>
-                <Field name="password" component="input" type="password" />
-              </fieldset>
-              <button className="signer" action="submit">
-                Register
-              </button>
+          <h1 style={{ color: 'white' }}>Register</h1>
+          <form className="form" onSubmit={handleSubmit(this.handleForm)}>
+            <div className="set">
+              <div className="holdfields">
+                <fieldset style={{ border: 'none' }} className="fieldset">
+                  <label className="labels" style={{ color: 'white' }}>
+                    Username :
+                  </label>
+                  <Field
+                    className="fields"
+                    name="username"
+                    component="input"
+                    type="text"
+                  />
+                </fieldset>
+
+                <fieldset className="fieldset" style={{ border: 'none' }}>
+                  <label className="labels" style={{ color: 'white' }}>
+                    Password :
+                  </label>
+                  <Field
+                    className="fields"
+                    name="password"
+                    component="input"
+                    type="password"
+                  />
+                </fieldset>
+              </div>
+              <div className="link">
+                <button className="signer" action="submit">
+                  Register
+                </button>
+              </div>
             </div>
           </form>
+          <div style={{ color: 'white', margin: '.5rem' }}>
+            Already have an account:
+          </div>
+          <Link className="link" to="/signin">
+            <button className="signer">Sign in</button>
+          </Link>
         </div>
       </div>
     );
