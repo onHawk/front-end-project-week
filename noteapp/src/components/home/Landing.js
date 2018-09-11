@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import appstyles from '../../App.css';
 import homestyles from './homestyles.css';
+import signinstyles from './signin.css';
 
 class Landing extends Component {
   render() {
@@ -21,7 +22,7 @@ class Landing extends Component {
             </div>
             <div className="auths">
               <Link to="/signup" className="link">
-                <button className="signer">Register</button>
+                <button className="signer">Sign Up</button>
               </Link>
               <Link to="/signin" className="link">
                 <button className="signer">Sign in</button>
