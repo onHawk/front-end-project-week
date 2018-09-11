@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 
 import { logout } from '../actions/AuthActions';
 
+import navstyles from './nav.css';
+
 class SideNav extends Component {
   logoutUser = () => {
     this.props.logout(this.props.history);
@@ -21,9 +23,11 @@ class SideNav extends Component {
           </Link>
         </div>
         <div>
-          <p onClick={() => this.logoutUser()}>
-            <Link to="/signin">Log out</Link>
-          </p>
+          <Link to="/signin">
+            <button className="nav-button" onClick={() => this.logoutUser()}>
+              Log out
+            </button>
+          </Link>
         </div>
       </div>
     );

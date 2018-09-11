@@ -1,0 +1,29 @@
+.sidebar {
+  border-right: 1px solid gray;
+
+  background-color: #8d2424;
+}
+.note-button {
+  border: 1px solid gray;
+  background-color: #2bc1c4;
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+.home-buttons {
+  flex-flow: column;
+  justify-content: center;
+}
+.nav-button {
+  border: 1px solid gray;
+  background-color: #ebdabb;
+  margin: 10px 0 10px 30px;
+  padding: 10px;
+  text-align: center;
+  width: 80%;
+}
+.nav-button:hover {
+  cursor: pointer;
+}
