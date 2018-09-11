@@ -12,14 +12,14 @@ class Landing extends Component {
     return (
       <div className="page-landing">
         <div className="landing">
-          <div>
-            <img src={require('./lambda.png')} />
+          <div className="loginhead">
+            <h1>Lambda Notes</h1>
+            <div>
+              <img src={require('./lambda.png')} />
+            </div>
           </div>
           <br />
           <div className="intro">
-            <div className="titulo">
-              <h1>Lambda Notes</h1>
-            </div>
             <div className="auths">
               <Link to="/signup" className="link">
                 <button className="signer">Sign Up</button>

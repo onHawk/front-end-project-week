@@ -34,7 +34,7 @@ h1 {
 .auths {
   height: 50%;
   width: 60%;
-  margin: 0 auto;
+  margin: 5rem auto;
   display: flex;
   flex-flow: wrap;
   justify-content: space-around;
@@ -69,11 +69,12 @@ h1 {
   height: 100%;
   width: 100%;
   display: flex;
+  margin-top: 2rem;
 }
 .set {
   height: 35rem;
   width: 100%;
-  margin: 1rem auto;
+  margin: 3rem auto;
 
   display: flex;
   flex-flow: column;

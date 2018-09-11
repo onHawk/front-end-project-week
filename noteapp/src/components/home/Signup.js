@@ -18,7 +18,13 @@ class Signup extends Component {
     return (
       <div className="page-landing">
         <div className="intro">
-          <h1 style={{ color: 'white' }}>Register</h1>
+          <div className="loginhead">
+            <h1 style={{ color: 'white' }}>Register</h1>
+            <div>
+              <img src={require('./lambda.png')} />
+            </div>
+          </div>
+          <h3 style={{ color: 'red' }}>{this.props.error}</h3>
           <form className="form" onSubmit={handleSubmit(this.handleForm)}>
             <div className="set">
               <div className="holdfields">

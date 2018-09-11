@@ -13,13 +13,13 @@ class Signin extends Component {
     const { handleSubmit } = this.props;
     return (
       <div className="page-landing">
-        <h3>{this.props.error}</h3>
         <div className="loginhead">
           <h1 style={{ color: 'white' }}>Log in</h1>
           <div>
             <img src={require('./lambda.png')} />
           </div>
         </div>
+        <h3 style={{ color: 'red' }}>{this.props.error}</h3>
         <form className="signin" onSubmit={handleSubmit(this.handleFormSubmit)}>
           <div className="signform">
             <div className="inputs">
