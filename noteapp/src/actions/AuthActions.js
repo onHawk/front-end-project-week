@@ -56,8 +56,8 @@ export function login(credentials, history) {
         history.push('/notes');
       })
       .catch(err => {
-        if (err) console.log('error: ', err);
-        if (err.response) {
+        // if (err) console.log('error: ', err);
+        if (err) {
           dispatch(authError('Username/Password invalid.'));
         }
       });
