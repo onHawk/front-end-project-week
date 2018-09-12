@@ -3,7 +3,7 @@ import notestyles from './notestyles.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { allNotes } from '../../actions/NoteActions';
+import { allNotes, deleteNote } from '../../actions/NoteActions';
 
 import Note from './Note';
 import SideNav from '../SideNav';
@@ -14,14 +14,17 @@ class NotesPage extends Component {
     visible: false,
   };
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.allNotes();
   }
 
-  toggleForm = () => {
+  toggle = () => {
     this.setState({
       visible: !this.state.visible,
     });
+  };
+  handleDelete = noteid => {
+    this.props.deleteNote(noteid);
   };
   render() {
     console.log(this.props.notes);
@@ -31,13 +34,22 @@ class NotesPage extends Component {
     const { notes } = this.props;
     return (
       <div className="notepage">
-        <SideNav toggle={this.toggleForm} />
-        <AddNote visible={this.state.visible} toggle={this.toggleForm} />
+        <SideNav toggle={this.toggle} />
+        <AddNote visible={this.state.visible} toggle={this.toggle} />
         <div className="page-container">
           <h3>Your Notes:</h3>
           <div className="notelist">
             {notes.map((note, i) => {
-              return <Note title={note.title} content={note.content} key={i} />;
+              return (
+                <Note
+                  id={note._id}
+                  title={note.title}
+                  content={note.content}
+                  history={this.props.history}
+                  handleDelete={this.handleDelete}
+                  key={i}
+                />
+              );
             })}
           </div>
         </div>
@@ -49,6 +61,7 @@ class NotesPage extends Component {
 const mapStateToProps = state => {
   return {
     notes: state.note.notes,
+    deleted: state.note.delete,
   };
 };
 
@@ -56,5 +69,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { allNotes }
+  { allNotes, deleteNote }
 )(NotesPage);

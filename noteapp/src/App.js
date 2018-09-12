@@ -6,6 +6,7 @@ import Signup from './components/home/Signup';
 import Signin from './components/home/Signin';
 import NotesPage from './components/notes/NotesPage';
 import AddNote from './components/notes/AddNote';
+import FullNote from './components/notes/FullNote';
 
 import './App.css';
 
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/signup" component={Signup} />
           <Route path="/signin" component={Signin} />
           <Route path="/notes" component={NotesPage} />
+          <Route path="/viewnote/:id" component={FullNote} />
           <AddNote />
         </div>
       </Router>

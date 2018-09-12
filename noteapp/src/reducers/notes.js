@@ -1,6 +1,11 @@
 // import { DELETE_NOTE } from '../actions/DeleteAction';
 
-import { ADD_NOTE, ALL_NOTES, DELETE_NOTE } from '../actions/NoteActions';
+import {
+  ADD_NOTE,
+  ALL_NOTES,
+  DELETE_NOTE,
+  ONE_NOTE,
+} from '../actions/NoteActions';
 
 const initialState = {
   notes: [],
@@ -12,6 +17,8 @@ export default (state = initialState, action) => {
       return { ...state, new: action.payload };
     case ALL_NOTES:
       return { ...state, notes: action.payload };
+    case ONE_NOTE:
+      return { ...state, anote: action.payload };
     case DELETE_NOTE:
       return { ...state, delete: action.payload };
     default:

@@ -3,6 +3,7 @@ import axios from 'axios';
 export const ADD_NOTE = 'ADD_NOTE';
 export const ALL_NOTES = 'ALL_NOTES';
 export const DELETE_NOTE = 'DELETE_NOTE';
+export const ONE_NOTE = 'ONE_NOTE';
 
 const ROOT = 'http://localhost:5000';
 
@@ -18,6 +19,21 @@ export const allNotes = () => {
       .then(res => {
         console.log(res.data);
         dispatch({ type: ALL_NOTES, payload: res.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+};
+
+export const oneNote = id => {
+  return dispatch => {
+    axios
+      .get(`${ROOT}/api/notes/${id}`, {
+        headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
+      })
+      .then(res => {
+        dispatch({ type: ONE_NOTE, payload: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -55,15 +71,19 @@ export const updateNote = (content, history) => {
   };
 };
 
-export const deleteNote = (id, history) => {
+export const deleteNote = id => {
   return dispatch => {
     axios
       .delete(`${ROOT}/api/deletenote/${id}`, {
         headers: { Authorization: `bearer ${localStorage.getItem('id')}` },
       })
       .then(res => {
-        history.push('/notes');
-        dispatch({ type: DELETE_NOTE, payload: 'Delete' });
+        console.log(res.data);
+
+        dispatch({ type: DELETE_NOTE, payload: res.data });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 };
