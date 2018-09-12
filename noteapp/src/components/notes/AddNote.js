@@ -30,10 +30,8 @@ class AddNote extends Component {
     }));
   };
   handleFormSubmit = () => {
-    // event.preventDefault();
-    // console.log(event.target);
-    // const note = new FormData(event.target);
     const { note } = this.state;
+    console.log(note);
     this.props.addNote(note, this.props.history);
   };
 
@@ -41,8 +39,15 @@ class AddNote extends Component {
     // const { handleFormSubmit } = this.props;
     console.log(this.state.note);
     return (
-      <div>
-        <SideNav />
+      <div className={this.props.visible ? 'formal' : 'hide-formal'}>
+        <div
+          onClick={() => {
+            this.props.toggle();
+          }}
+        >
+          {' '}
+          X
+        </div>
         <div>
           <form onSubmit={this.handleFormSubmit}>
             <label>Title:</label>
@@ -59,21 +64,13 @@ class AddNote extends Component {
               onChange={e => this.handleChange({ content: e.target.value })}
             />
 
-            <Link to="/notes">
-              <button type="submit">Save</button>
-            </Link>
+            <button>Save</button>
           </form>
         </div>
       </div>
     );
   }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     notes: state.note.success,
-//   };
-// };
 
 export default connect(
   null,

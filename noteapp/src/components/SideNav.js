@@ -18,9 +18,10 @@ class SideNav extends Component {
           <Link to="/notes">
             <button className="nav-button">View Notes</button>
           </Link>
-          <Link to="/AddNote">
-            <button className="nav-button">+ Create New Note</button>
-          </Link>
+
+          <button className="nav-button" onClick={this.props.toggle}>
+            + Create New Note
+          </button>
         </div>
         <div>
           <Link to="/signin">
